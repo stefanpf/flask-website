@@ -12,36 +12,46 @@ To install and test:
 
 2. Install all necessary dependencies:
 
-    pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 
 You may want to initialize a virtual environment before doing this.
 
 3. From the repository's root directory initialize a database:
 
-    flask db init
+```
+flask db init
+```
 
-4. Migrate the database models into the new database:
+4. Migrate the database models to the new database:
 
-    flask db migrate -m "add users and posts tables"
+```
+flask db migrate -m "add users and posts tables"
+```
 
-5. Upgrade the database with these tables:
+5. Upgrade the databases with these tables:
 
-    flask db upgrade
+```
+flask db upgrade
+```
 
-6. Start a Python shell and add a user to the database:
+6. From the repository's root directory start a `Python` shell and add user to the database:
 
-    $ ./python
-    Python 3.7.1
-    >>> user = User(username='yourusername', email='test@test.com')
-    >>> user.set_password('test123')
-    >>> db.session.add(user)
-    >>> db.session.commit()
-    >>> exit()
+```python
+user = User(username='testuser', email='test@company.com')
+user.set_password('test123')
+db.session.add(user)
+db.session.commit()
+exit()
+```
 
 7. Start up the Flask development webserver:
 
-    flask run
+```
+flask run
+```
 
-8. Open a browser and go to `localhost:5000` to see the visitor-facing front-end.
+8. Open a browser and go to `localhost:5000` to test the visitor-facing frontend.
 
-9. Go to `localhost:5000/auth/login` and login with the email and password you set in step 6. to see the admin dashboard.
+9. Go to `localhost:5000/auth/login/` and login with the email and password you set in step 6.) to see the admin dashboard.
