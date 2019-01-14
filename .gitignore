@@ -8,7 +8,6 @@ migrations/
 
 # Environment Variables
 *.env
-*.flaskenv
 
 # Virtual Environment
 venv/
