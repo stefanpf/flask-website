@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <h1>{{ post.title }}</h1>
+        <p><small>{{ post.timestamp.strftime('%B %d, %Y')}}</small></p>
+    </section>
+    <section>
+        {{ post.content|safe }}
+    </section>
+{% endblock content %}

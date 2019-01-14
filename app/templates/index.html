@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <h1>Welcome!</h1>
+        <p>
+            Hi, my name is Stefan, and this website is my personal project portfolio/blog/learning experience.
+        </p>
+        <p>If you want to know more about me, check out the aptly titled <a href="{{ url_for('main.about')}}">About page</a>.</p>
+    </section>
+    <section>
+        <h2>Interesting Links</h2>
+        <p>
+            You might be interested in one or more of the following articles:
+        </p>
+        <p>
+            <a href="#"><strong>Project: py2gc</strong></a>: a project summary for my Google Calendar command line utility, py2gc.
+        </p>
+        <p>
+            <a href="#"><strong>Tutorial: packaging your script with setuptools entry_points</strong></a>: a step-by-step tutorial showing how to easily package your Python command line script for platform-independent distribution using the <em>entry_points</em> keyword in setuptools.
+        </p>
+        <p>
+            <a href="{{ url_for('main.projects') }}"><strong>All Projects</strong></a>
+        </p>
+        <p>
+            <a href="{{ url_for('main.blog') }}"><strong>All Blog Posts</strong></a>
+        </p>
+    </section>
+    <section>
+        <p>Feeling social? Check out these links:</p>
+        <p class="social-links">
+            <a href="https://github.com/stefanpf/"><img src="{{ url_for('static', filename='media/logos/github-mark-120px-plus.png') }}" alt="GitHub Logo"></a>
+            <a href="https://twitter.com/stefanpf/"><img src="{{ url_for('static', filename='media/logos/twitter-logo.png') }}" alt="Twitter Logo"></a>
+        </p>
+    </section>
+{% endblock content %}

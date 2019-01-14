@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <h1>About Me</h1>
+        <p class="img"><img class="profile-img" src="{{ url_for('static', filename='media/profile_pic.jpg') }}" alt="Profile Pic"></p>
+        <p>
+            Hi, my name is Stefan, and I live in Berlin, Germany. I dabble in code and am always looking to learn something new.
+        </p>
+        <p>
+            This website is thus first and foremost a learning experience: I wrote it from scratch and I will tinker with it at various points. Not everything works perfectly (<em>cough</em> horizontal scrollbar <em>cough</em>) but one day it hopefully will.
+        </p>
+        <p>
+            I use this website to chronicle my coding learning and to showcase some of my projects. I might add some musings and ramblings on non-technological subjects if I feel like it.
+        </p>
+        <p>
+            If you want to get in touch, send me an email! I would love to hear from you at <a href="mailto:mail@stefanpfeuffer.com">mail@stefanpfeuffer.com</a>.
+        </p>
+    </section>
+    <section>
+        <p>Feeling social? Check out these links:</p>
+        <p class="social-links">
+            <a href="https://github.com/stefanpf/"><img src="{{ url_for('static', filename='media/logos/github-mark-120px-plus.png') }}" alt="GitHub Logo"></a>
+            <a href="https://twitter.com/stefanpf/"><img src="{{ url_for('static', filename='media/logos/twitter-logo.png') }}" alt="Twitter Logo"></a>
+        </p>
+    </section>
+{% endblock content %}

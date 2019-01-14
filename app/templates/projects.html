@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <h1>Projects</h1>
+    </section>
+    {% for post in posts.items %}
+    <section>
+        <h2><a href="{{ url_for('main.post', post_id=post.id, slug=post.slug) }}">{{ post.title }}</a></h2>
+        <p><small>{{ post.timestamp.strftime('%B %d, %Y')}}</small></p>
+        <p>
+            {{ post.content|truncate|safe }}
+        </p>
+    </section>
+    <section><p class="post-divider">&#x2605;</p></section>
+    {% endfor %}
+
+    <section class="blog-pagination">
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+      {% if page_num %}
+        {% if posts.page == page_num %}
+          <a class="button button-info" href="{{ url_for('main.projects', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="button" href="{{ url_for('main.projects', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        ...
+      {% endif %}
+    {% endfor %}
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Database
+migrations/
+*.db
+
+# Environment Variables
+*.env
+*.flaskenv
+
+# Virtual Environment
+venv/
+
+# Documentation
+documentation/
+
+# Logs
+logs/
+
+# Uploaded images
+app/static/media/img/*.*
+
+# OS X Files
+.DS_STORE

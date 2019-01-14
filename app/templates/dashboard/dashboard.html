@@ -1,0 +1,64 @@
+{% extends 'dashboard/dashboard_base.html' %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <section>
+        <a class="button button-success" href="{{ url_for('dashboard.new_post') }}">New Post</a>
+        <h2>Posts Overview</h2>
+        <table class="posts-overview">
+            <tr>
+                <td><strong>Title</strong></td>
+                <td><strong>Date Posted</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Published?</strong></td>
+                <td><strong>Edit</strong></td>
+                <td><strong>Delete</strong></td>
+            </tr>
+            {% for post in posts.items %}
+            <tr>
+                <!-- The url_for link building throws up an error here and says it is missing
+                    the "slug" parameter. The same route building works in other templates.
+                    Went around this by building the link this way: -->
+                <td><a href="post/{{ post.id }}/{{ post.slug }}">{{ post.title }}</a></td>
+                <td>{{ post.timestamp.strftime('%Y-%m-%d') }}</td>
+                <td>{{ post.content_type }}</td>
+                <td>{{ post.published }}</td>
+                <td><a class="button button-info" href="{{ url_for('dashboard.edit_post', post_id=post.id) }}">Edit</a></td>
+                <td><a class="button button-danger" href="#open-modal">Delete</a>
+                    <!-- Modal for Delete Post -->
+                    <div id="open-modal" class="modal-dialog">
+                        <div>
+                            <a href="#close" title="Close" class="modal-close">X</a>
+                            <h2>Delete Post?</h2>
+                            <p>
+                                This post will be deleted: {{post.title }}
+                            </p>
+                            <p>
+                                Continue?
+                            </p>
+                            <p>
+                                <a href="#close" class="button button-info">Cancel</a>
+                                <form action="{{ url_for('dashboard.delete_post', post_id=post.id )}}" method="POST"><input class="button button-danger" type="submit" value="Delete"></form>
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+              {% if page_num %}
+                {% if posts.page == page_num %}
+                  <a class="button button-success" href="{{ url_for('dashboard.dashboard', page=page_num) }}">{{ page_num }}</a>
+                {% else %}
+                  <a class="button button-info" href="{{ url_for('dashboard.dashboard', page=page_num) }}">{{ page_num }}</a>
+                {% endif %}
+              {% else %}
+                ...
+              {% endif %}
+            {% endfor %}
+        </p>
+    </section>
+
+{% endblock content %}
