@@ -26,7 +26,8 @@ body {
 a {
   color: #242524;
   text-decoration: underline;
-  text-decoration-color: #057c01;
+  -webkit-text-decoration-color: #057c01;
+          text-decoration-color: #057c01;
 }
 
 a:hover {
@@ -42,7 +43,8 @@ header a {
   font-weight: 100;
   letter-spacing: 2px;
   text-decoration: underline overline;
-  text-decoration-color: #057c01;
+  -webkit-text-decoration-color: #057c01;
+          text-decoration-color: #057c01;
   padding: 10px 5px;
   display: inline-block;
   width: 100%;
