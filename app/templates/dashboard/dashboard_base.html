@@ -15,7 +15,7 @@
             <div>
             User: {{ current_user.username }} |
             {% if current_user.last_seen %}
-                Last seen on: {{ current_user.last_seen }} UTC
+                Last seen on: {{ current_user.last_seen.strftime('%Y-%m-%d at %H:%M') }} UTC
             {% endif %}
             </div>
             <ul class="navbar">
@@ -26,17 +26,17 @@
         </nav>
     </header>
     <div class="content-container">
-    <main class="content">
-        {% with message = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <strong>{{ message }}</strong>
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-
-        {% block content %}
-        {% endblock content %}
-    </main>
+        <main class="content">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="flash-message"><strong>{{ message }}</strong></p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </div>
 </body>
 </html>
