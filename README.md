@@ -36,7 +36,7 @@ flask db migrate -m "add users and posts tables"
 flask db upgrade
 ```
 
-6. From the repository's root directory start a `Python` shell and add user to the database:
+6. From the repository's root directory start a `Python` shell and add a user to the database:
 
 ```python
 user = User(username='testuser', email='test@company.com')

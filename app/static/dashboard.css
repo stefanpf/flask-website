@@ -185,4 +185,16 @@ header {
   box-shadow: 1px 1px 3px #000;
 }
 
-.modal-close:hover { background: #00d9ff; }
+.modal-close:hover {
+  background: #00d9ff;
+}
+
+.flash-message {
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  padding: 5px;
+  background: #9ccbed;
+  border: 1px solid #9ccbed;
+  border-radius: 5px;
+}
