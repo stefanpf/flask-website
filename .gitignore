@@ -19,7 +19,7 @@ documentation/
 logs/
 
 # Uploaded images
-app/static/media/img/*.*
+app/static/media/img/
 
 # OS X Files
 .DS_STORE
