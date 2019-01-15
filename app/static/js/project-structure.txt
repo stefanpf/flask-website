@@ -1,0 +1,71 @@
+<section>
+    <p>
+    </p>
+    <p class="content-code">
+    </p>
+</section>
+
+<section>
+    <h2>Problem To Solve</h2>
+    <p>
+    </p>
+    <p class="img">
+        <img class="profile-img" src="{{ url_for('static', filename='media/profile_pic.jpg') }}" alt="Profile Pic">
+    </p>
+</section>
+
+<section>
+    <h2>Solution</h2>
+    <p>
+    </p>
+</section>
+
+<section>
+    <h2>Considerations</h2>
+    <p>
+    </p>
+</section>
+
+<section>
+    <h2>Challenges Overcome</h2>
+    <p>
+    </p>
+</section>
+
+<section>
+    <h2>Lessons Learned</h2>
+    <p>
+    </p>
+</section>
+
+<section>
+    <h2>Conclusion</h2>
+    <p>
+    <table>
+        <tr>
+            <td>Developed:</td>
+            <td>early December 2018</td>
+        </tr>
+        <tr>
+            <td>Python Experience:</td>
+            <td>ca 4 weeks</td>
+        </tr>
+        <tr>
+            <td>Time Needed:</td>
+            <td>4 days</td>
+        </tr>
+        <tr>
+            <td>Technology Used:</td>
+            <td>Python 3, argparse, oauth2client, Google API</td>
+        </tr>
+    </table>
+    </p>
+</section>
+
+<section>
+    <h2>Links</h2>
+    <p>
+        Source Code:</br>
+        Package:
+    </p>
+</section>
