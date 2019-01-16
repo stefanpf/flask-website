@@ -8,7 +8,6 @@ from app.models import User, Post
 from datetime import datetime
 from flask import current_app, render_template, redirect, url_for, flash, request
 from flask_login import current_user, login_required
-from werkzeug.security import generate_password_hash
 from PIL import Image
 from slugify import slugify
 
@@ -29,7 +28,7 @@ def update_user():
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.email = form.email.data.lower()
-        hashed_password = generate_password_hash(form.password.data)
+        hashed_password = current_user.set_password(form.password.data)
         current_user.password = hashed_password
         db.session.commit()
         flash('Your credentials have been updated.')
