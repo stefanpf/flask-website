@@ -27,6 +27,12 @@
 </section>
 
 <section>
+    <h2>Technology Used</h2>
+    <p>
+    </p>
+</section>
+
+<section>
     <h2>Challenges Overcome</h2>
     <p>
     </p>
