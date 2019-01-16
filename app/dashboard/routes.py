@@ -27,6 +27,7 @@ def dashboard():
 def update_user():
     form = UpdateUserForm()
     if form.validate_on_submit():
+        current_user.username = form.username.data
         current_user.email = form.email.data.lower()
         hashed_password = generate_password_hash(form.password.data)
         current_user.password = hashed_password
