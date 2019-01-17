@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'charterregular';
-    src: url('{ url_for('static', filename='charter/charter_regular-webfont.eot') }');
-    src: url('{ url_for('static', filename='charter/charter_regular-webfont.eot?#iefix') }') format('embedded-opentype');
-    src: url('{ url_for('static', filename='charter/charter_regular-webfont.woff') }') format('woff');
+    src: url('charter/charter_regular-webfont.eot');
+    src: url('charter/charter_regular-webfont.eot?#iefix') format('embedded-opentype');
+    src: url('charter/charter_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
