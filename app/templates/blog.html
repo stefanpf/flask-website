@@ -10,7 +10,7 @@
         <p><small>{{ post.timestamp.strftime('%B %d, %Y')}}</small></p>
         <p>
             {{ post.content|truncate|safe }}
-            <a href="{{ url_for('main.post', post_id=post.id, slug=post.slug) }}">More...</a>
+            <a href="{{ url_for('main.post', post_id=post.id, slug=post.slug) }}">Read More...</a>
         </p>
 
     </section>
