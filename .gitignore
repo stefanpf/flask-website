@@ -21,5 +21,8 @@ logs/
 # Uploaded images
 app/static/media/img/
 
+# Deployment Tools
+deploy_tools/
+
 # OS X Files
 .DS_STORE
